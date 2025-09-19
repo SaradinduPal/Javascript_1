@@ -23,5 +23,5 @@ let fxn1= function(){
 
 
                 //Stack And Heap Memory
-//Stack memory use in (Primitive)
-//Heap memory use in (Non-Primitive) 
+//Stack memory use in (Primitive) --> here we get call by value
+//Heap memory use in (Non-Primitive) --> here we get call by reference
