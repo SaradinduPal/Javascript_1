@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning starts here</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+
+
+
+<script>
+
+    //getElementById
+    document.getElementById('title')
+    document.getElementById('title').id
+    document.getElementById('title').className
+    document.getElementById('title').getAttribute('id')
+    document.getElementById('title').getAttribute('class')
+    document.getElementById('title').setAttribute('class','secondHeading') //it will set the new name of this class attribute, it will override the previous values
+
+    //we can store the values into a variable
+    const one=document.getElementById('title') //now we can do further operations on "one" named variable
+    one.style.backgroundColor="green"
+    one.style.padding='20px'
+    one.style.borderRadius='10px'
+
+    //for getting the content from the code
+    console.log(one.innerHTML);
+    console.log(one.innerText);
+    console.log(one.textContent); //those three are giving same ans, so what are the difference between them ?
+
+
+    //querySelectors {it's works only one value, for selecting all values we have to use querySelectorAll}
+
+    document.querySelector('ul')
+    const myUl=document.querySelector('ul')
+    myUl.querySelector('li')
+    const turnGreen=myUl.querySelector('li')
+    turnGreen.style.backgroundClip='green'
+
+    //querySelectorAll
+    const myLI=document.querySelectorAll('li') //here "myLI" is a nodeList, it's similar like array but not same
+    // myLI.style.backgroundColor='blue'  //it will not work
+    myLI[0].style.backgroundColor='blue'  //it will work
+    //that means when we get "NodeList" that time we have to specifically says which one means [0] or another one, that is funda [note:querySelectorAll always give NodeList]
+
+    myLI.forEach(function(l){
+        l.style.backgroundColor='yellow'    //in "querySelectorAll" there are "forEach" loop
+    })
+
+
+
+
+    //getElementByClassName
+    const babu=document.getElementsByClassName('list-item') //it's give [html collection],where is no any 'forEach' loop into this collection ,Sothat we have to convert [html collection] to Array, and after converting we can access the "forEach" loop
+
+    //how to convert [collection to Array]
+    Array.from(babu); //by this way the convertion is happening
+    //store this into a variable
+    const newBabu=Array.from(babu)
+    newBabu.forEach(function(item){
+        item.style.backgroundColor='violet'
+        item.style.color="blue"
+        // item.innerText="Sapan"
+        
+    })
+
+</script>
+</html>
