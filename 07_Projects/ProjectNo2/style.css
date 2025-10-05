@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding:0;
+    text-align: center;
+    margin: 10px;
+}
+body{
+    background-color: rgb(86, 96, 96);
+}
+button{
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+}
