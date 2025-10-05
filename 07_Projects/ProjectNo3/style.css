@@ -1,0 +1,17 @@
+body{
+    background-color: #212121;
+    color: #fff;
+}
+.center{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#clock{
+    margin-top: 10px;
+    height: 20px;
+    width: 120px;
+    background-color: #e26e0f;
+}
