@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+    color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#wrapper{
+    margin-top: 50px;
+    padding: 20px;
+    border: 2px solid rgb(114, 157, 250);
+    box-shadow: 4px 3px 4px;
+    border-radius: 7px;
+    height: auto;
+}
+#newGame{
+    background-color: aqua;
+    color: black;
+}
