@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="computer" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="computer"></li>
+            <li><img width="200px" id="tiger" src="https://images.unsplash.com/photo-1615963244664-5b845b2025ee?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="tiger"></li>
+            <li><img width="200px" id="doll" src="https://images.unsplash.com/photo-1612506001235-f0d0892aa11b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="doll"></li>
+            <li><img width="200px" id="tree" src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="tree" ></li>
+            <li><img width="200px" id="human" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="human"></li>
+            <li><a href="https://google.com" id="google" style="color: aliceblue;">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script> //we will never use inline onclick() function
+    // document.getElementById('computer').onclick=function(){  alert('computer')  // }  
+    //we don't use this approach also
+
+    //we will use  "addEventListener"
+    // document.getElementById('computer').addEventListener('click',function(e){
+    //    console.log(e);
+    // },false) //this 'false' is not recuired for all time
+     
+
+
+
+    //Event Propagation  (there we write false, what is the funda of (false or true) there, that is come from Event Propagation )
+    //2 type of context of Event Propagation => 1) Event Bubbling 2) Event Capturing
+
+     document.getElementById('images').addEventListener('click',function(e){
+        console.log("clicked inside the ul");
+     },false)
+
+    document.getElementById('tree').addEventListener('click',function(e){
+        console.log("tree clicked");
+        // e.stopPropagation()  //if we use this, then there will be no bubbling 
+     },false)  //when we specifically clicked on the "tree" that time at first inner element/childNode text will genetare first then outer element/parentNode will execute => by clicking "tree"=> "tree clicked" then "clicked inside the ul" will happen.... (its called bubbling) // note:- default value will also "false"
+
+     //but if we do "true" for both case instead of "false", that time outer means parentNode will be execute first and then the child one
+    
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault() //By doing this, it will prevented to go to the website link, so then only print the "Google Clicked"
+        e.stopPropagation() // it will stop the bubbling
+        console.log("Google Clicked");
+    },false)
+
+    
+
+</script>                       
+</html>
