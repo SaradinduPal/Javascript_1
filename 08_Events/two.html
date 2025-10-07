@@ -1,0 +1,41 @@
+//project => when we click any image that time this image will be vanished from the screen
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Image</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="computer" src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="computer"></li>
+            <li><img width="200px" id="tiger" src="https://images.unsplash.com/photo-1615963244664-5b845b2025ee?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="tiger"></li>
+            <li><img width="200px" id="doll" src="https://images.unsplash.com/photo-1612506001235-f0d0892aa11b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="doll"></li>
+            <li><img width="200px" id="tree" src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="tree" ></li>
+            <li><img width="200px" id="human" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="human"></li>
+            <li><a href="https://google.com" id="google" style="color: aliceblue;">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e.target); //it says from which "target" the event is coming
+        console.log(e.target.parentNode); // it will give the "li" details
+                                         //we have to delete the full list item if we dont select the li then all bullet point will be stay only picture will vanished
+     
+     
+    console.log(e.target.tagName);//it will say which one is "IMG" or "LI" or anything
+    
+     
+    if (e.target.tagName==='IMG') {
+        let removeIt=e.target.parentNode   // if we don't do that, then when in any place in the 
+                                          //screen I will click, it will remove all the image from the page,
+                                          //Because when we click on list item(li), that time parentNode of list item is "ul", and then we unintentionally remove the full "ul", so that all images is removed
+        removeIt.remove()
+    }                                     
+
+     })
+</script>
+</html>
