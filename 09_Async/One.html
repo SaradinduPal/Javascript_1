@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Basics</title>
+</head>
+<body>
+    <h1>Async Basic Discussion</h1>
+    <button  id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout( function(){
+    //     console.log("Saradindu");
+    // },2000)
+    //OR
+
+    const SayName=function(){ //here we define the callback function previously
+        console.log("Saradindu");
+    }    
+    setTimeout(SayName,2000)//Here we call the reference of this function, Note:- We call it in argument so give the reference 
+
+
+    //Changing the <h1>
+    
+    const changeHeading=function(){
+        document.querySelector('h1').innerHTML="Javascript Course"
+    }
+    const changeHeadFxn = setTimeout(changeHeading,2000)
+    
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeHeadFxn) //it will stop this timeOut function, if we call it before 2000, for doing this we have to give the reference of the previous function where we want to do this
+        console.log("STOPPED");
+    })
+        
+</script>
+</html>
