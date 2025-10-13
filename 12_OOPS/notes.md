@@ -28,4 +28,4 @@ Polymorphism
 
 
 
-<!-- After those thing all the topic are related to oops theory part so if want then wan -->
+-After those thing all the topic are related to oops theory part so if want then watch video or do gpt
